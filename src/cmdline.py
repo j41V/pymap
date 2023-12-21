@@ -13,7 +13,7 @@ pymap [OPTIONS] [HOST]
 -th/--threading    | use threading
 -h/--help          | print this screen
 """
-version = "1.1\n"
+version = "1.2\n"
 logo = """
     _/_/_/ _/  _/_/      _/ _/_/_/ _/_/_/
    _/  _/ _/ _/ _/_/_ _/_/ _/  _/ _/  _/
