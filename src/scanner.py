@@ -2,6 +2,7 @@ import socket
 import multiprocessing.pool 
 import cmdline
 import threading
+import sys
 
 class Scanner():
     def __init__(self, target_ip, ports_to_scan, socket_timeout: float, use_threading: bool) -> None:
@@ -47,6 +48,6 @@ class Scanner():
             self.open_ports.add(port)
         except KeyboardInterrupt:
             cmdline.print_quit()
-            exit()
+            sys.exit()
         except:
             self.closed_ports.add(port)

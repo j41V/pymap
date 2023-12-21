@@ -1,5 +1,6 @@
 from sys import argv
 import socket
+import sys
 
 usage = """
 pymap [OPTIONS] [HOST]
@@ -12,7 +13,7 @@ pymap [OPTIONS] [HOST]
 -th/--threading    | use threading
 -h/--help          | print this screen
 """
-version = "1.0\n"
+version = "1.1\n"
 logo = """
     _/_/_/ _/  _/_/      _/ _/_/_/ _/_/_/
    _/  _/ _/ _/ _/_/_ _/_/ _/  _/ _/  _/
@@ -60,7 +61,7 @@ def print_success(message):
 
 def print_usage():
     print(f"{ForegroundColors.green}{usage}")
-    exit()
+    sys.exit()
 
 def print_results_dict(open_ports_dictionary: dict, closed_ports: set):
     empty_space = " "
@@ -96,7 +97,7 @@ def get_arguments():
 
     if len(arguments) < 2:
         print_error("Argument [HOST] missing. For help run pymap -h or pymap --help")
-        exit()
+        sys.exit()
 
     if "-h" in arguments or "--help" in arguments:
         print_usage()
@@ -110,7 +111,7 @@ def get_arguments():
 
     except socket.gaierror:
         print_error("Enter a valid host name or ip address as last argument")
-        exit()
+        sys.exit()
 
     for index, argument in enumerate(arguments):
         if argument == "-sv" or argument == "--scanversion":
