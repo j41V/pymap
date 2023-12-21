@@ -38,7 +38,7 @@ class Scanner():
             return (self.open_ports, self.closed_ports)
         except KeyboardInterrupt:
             cmdline.print_quit()
-            exit()
+            sys.exit()
 
     def scan_port_tcp(self, port: int):
         scan_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
